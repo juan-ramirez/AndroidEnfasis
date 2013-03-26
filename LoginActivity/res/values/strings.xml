@@ -1,0 +1,54 @@
+<resources>
+
+    <string name="app_name">Sistema gestión de riesgo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="content_desciption">Content Description</string>
+
+    <!-- Nombres de "Crear riesgo" -->
+
+    <string name="numero_de_riesgo">Número de riesgo</string>
+    <string name="agente_amenaza">Agente amenaza</string>
+    <string name="amenaza">Amenaza</string>
+    <string name="vulnerabilidad">Vulnerabilidad</string>
+
+    <!-- "Impacto" -->
+
+    <string name="impacto">Impacto</string>
+    <string name="confidencialidad">Confidencialidad</string>
+    <string name="integridad">Integridad</string>
+    <string name="disponibilidad">Disponibilidad</string>
+
+    <!-- "Probabilidad" -->
+
+    <string name="probabilidad">Probabilidad</string>
+    <string name="accesibilidad">Accesibilidad</string>
+    <string name="habilidad">Habilidad</string>
+    <string name="recursos">Recursos</string>
+    <string name="motivacion">Motivación</string>
+
+    <!-- "Consultar" -->
+    <string name="resultados_consulta">Resultados consulta</string>
+    <string name="consulta">Consulta</string>
+    <string name="consultar">Ingrese el id del riesgo que desea consultar</string>
+
+    <!-- "Login" -->
+    <string name="usuario">Usuario</string>
+    <string name="password">Password</string>
+    <string name="acceder">Acceder</string>
+
+    <!-- "Menu principal" -->
+    <string name="menu_principal">Menú Principal</string>
+
+    <!-- "Control" -->
+    <string name="riesgo">Riesgo</string>
+    <string name="efectividad_control">Efectividad del control</string>
+    <string name="control">Control</string>
+    <string name="descripcion_control">Descipción del control</string>
+    <string name="riesgo_residual">Riesgo residual</string>
+    
+    <!-- "Grafico" -->
+    <string name="sorry">LO SENTIMOS! - NO ALCANZAMOS A HACERLO</string>
+
+</resources>
