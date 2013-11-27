@@ -21,7 +21,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".CrearActivity" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".ConsultarActivity" />
         <activity android:name=".GraficoActivity" />
         <activity android:name=".ControlActivity" />
