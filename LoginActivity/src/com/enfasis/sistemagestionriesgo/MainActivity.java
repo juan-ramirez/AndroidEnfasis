@@ -18,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.Gallery;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -41,126 +42,28 @@ public class MainActivity extends Activity {
 
 		inicializarObjetos();
 		crearAdapter();
-		asignarAdapterALaGaleria();
-		asignarOnItemClickGaleria();
+		
 
 	}
 
 	private void inicializarObjetos() {
-
-		perfil = getIntent().getExtras().getString("perfil");
-		picGallery = (Gallery) findViewById(R.id.gallery);
-		resources = getResources();
-		llenarVectorGaleria();
-		database = openOrCreateDatabase(DB_NAME, SQLiteDatabase.OPEN_READWRITE, null);
+		ListView listViewMenu =  (ListView) findViewById(R.id.listViewMenuPpal);
+		
 
 	}
 
-	private void llenarVectorGaleria() {
-		if (perfil.equals("consultor")) {
-			imageBitmaps = new Bitmap[2];
-			imageBitmaps[0] = BitmapFactory.decodeResource(resources, R.drawable.consultar);
-			imageBitmaps[1] = BitmapFactory.decodeResource(resources, R.drawable.grafico);
-		} else if (perfil.equals("creador")) {
-			imageBitmaps = new Bitmap[4];
-			imageBitmaps[0] = BitmapFactory.decodeResource(resources, R.drawable.crear);
-			imageBitmaps[1] = BitmapFactory.decodeResource(resources, R.drawable.modificar);
-			imageBitmaps[2] = BitmapFactory.decodeResource(resources, R.drawable.consultar);
-			imageBitmaps[3] = BitmapFactory.decodeResource(resources, R.drawable.grafico);
-		} else if (perfil.equals("control")) {
-			imageBitmaps = new Bitmap[3];
-			imageBitmaps[0] = BitmapFactory.decodeResource(resources, R.drawable.control);
-			imageBitmaps[1] = BitmapFactory.decodeResource(resources, R.drawable.consultar);
-			imageBitmaps[2] = BitmapFactory.decodeResource(resources, R.drawable.grafico);
-		} else if (perfil.equals("administrador")) {
-			imageBitmaps = new Bitmap[5];
-			imageBitmaps[0] = BitmapFactory.decodeResource(resources, R.drawable.crear);
-			imageBitmaps[1] = BitmapFactory.decodeResource(resources, R.drawable.modificar);
-			imageBitmaps[2] = BitmapFactory.decodeResource(resources, R.drawable.consultar);
-			imageBitmaps[3] = BitmapFactory.decodeResource(resources, R.drawable.control);
-			imageBitmaps[4] = BitmapFactory.decodeResource(resources, R.drawable.grafico);
-		}
-
-	}
+	
 
 	private void crearAdapter() {
-		imgAdapt = new PicAdapter(this, imageBitmaps);
+		
+		
+		
+		
 	}
 
-	private void asignarAdapterALaGaleria() {
-		picGallery.setAdapter(imgAdapt);
-	}
+	
 
-	private void asignarOnItemClickGaleria() {
-		picGallery.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-				if (perfil.equals("consultor")) {
-					switch (arg2) {
-					case 0:
-						goConsultar();
-						break;
-					case 1:
-						goGrafico();
-						break;
-					default:
-						break;
-					}
-				} else if (perfil.equals("creador")) {
-					switch (arg2) {
-					case 0:
-						goCrear();
-						break;
-					case 1:
-						goModificar();
-						break;
-					case 2:
-						goConsultar();
-						break;
-					case 3:
-						goGrafico();
-						break;
-					default:
-						break;
-					}
-				} else if (perfil.equals("control")) {
-					switch (arg2) {
-					case 0:
-						goControl();
-					case 1:
-						goConsultar();
-						break;
-					case 2:
-						goGrafico();
-						break;
-					default:
-						break;
-					}
-				} else if (perfil.equals("administrador")) {
-					switch (arg2) {
-					case 0:
-						goCrear();
-						break;
-					case 1:
-						goModificar();
-						break;
-					case 2:
-						goConsultar();
-						break;
-					case 3:
-						goControl();
-						break;
-					case 4:
-						goGrafico();
-						break;
-					default:
-						break;
-					}
-				}
-			}
-		});
-	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
