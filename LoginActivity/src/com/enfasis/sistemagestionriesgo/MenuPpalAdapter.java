@@ -40,10 +40,10 @@ public class MenuPpalAdapter extends BaseAdapter {
 		HashMap<String, String> opcion = new HashMap<String, String>();
 		opcion = data.get(position);
 		
-		// Setting all values in listview
-		textViewOpcion.setText(opcion.get(MainActivity.KEY_OPCION));
-		textViewDescripcion.setText(opcion.get(MainActivity.KEY_DESCRIPCION));
-        imageSwitcher.DisplayImage(opcion.get(MainActivity.KEY_IMAGEN), icon);       
+		// Setting all values in listvie
+		textViewOpcion.setText(opcion.get(MainActivity.));
+		textViewDescripcion.setText(opcion.get(MainActivity.));
+        imageSwitcher.DisplayImage(opcion.get(MainActivity.), icon);       
 		
 		return rowView;
 	}
