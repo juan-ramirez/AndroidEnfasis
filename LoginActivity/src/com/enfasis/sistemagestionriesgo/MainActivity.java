@@ -23,15 +23,9 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-	private String perfil;
 
 	SQLiteDatabase database;
-	private static String DB_NAME = "db_riesgos.s3db";
-
-	private PicAdapter imgAdapt;
-	private Gallery picGallery;
-	private Bitmap[] imageBitmaps;
-	private Resources resources;
+	
 
 	Intent generalIntent;
 
