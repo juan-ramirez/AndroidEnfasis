@@ -1,5 +1,7 @@
 package com.enfasis.sistemagestionriesgo;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -22,8 +24,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-
-
+	
 	SQLiteDatabase database;
 	
 
@@ -32,29 +33,39 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_main);
+		crearMenu();
 
-		inicializarObjetos();
-		crearAdapter();
+		
+		
 		
 
 	}
 
-	private void inicializarObjetos() {
+	private void crearMenu() {
+		String[] opcion1 = {"Crear", "Creacion de formatos", "crear_mini.png"};
+		String[] opcion2 = {"Crear", "Creacion de formatos", "crear_mini.png"};
+		String[] opcion3 = {"Crear", "Creacion de formatos", "crear_mini.png"};
+		String[] opcion4 = {"Crear", "Creacion de formatos", "crear_mini.png"};
+		String[] opcion5 = {"Crear", "Creacion de formatos", "crear_mini.png"};
+		ArrayList<String[]> arrayListMenu = new ArrayList<String[]>();
+		arrayListMenu.add(opcion1);
+		arrayListMenu.add(opcion2);
+		arrayListMenu.add(opcion3);
+		arrayListMenu.add(opcion4);
+		arrayListMenu.add(opcion5);
 		ListView listViewMenu =  (ListView) findViewById(R.id.listViewMenuPpal);
+		MenuPpalAdapter adapter = new MenuPpalAdapter(this, arrayListMenu);
+		listViewMenu.setAdapter(adapter);
+		
 		
 
 	}
 
 	
 
-	private void crearAdapter() {
-		
-		
-		
-		
-	}
-
+	
 	
 
 	
