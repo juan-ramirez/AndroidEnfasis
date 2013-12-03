@@ -1,15 +1,12 @@
 package com.enfasis.sistemagestionriesgo;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
@@ -17,16 +14,16 @@ import android.widget.TextView;
 
 public class MenuPpalAdapter extends BaseAdapter {
 	
-	private Activity activity;
-	private ArrayList<HashMap<String, String>> data;
+	private Context context;
+	private ArrayList<String[]> values;
     private static LayoutInflater inflater =null;
     public ImageSwitcher imageSwitcher; 
  
-    public MenuPpalAdapter(Activity a, ArrayList<HashMap<String, String>> d) {
-        activity = a;
-        data=d;
-        inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        imageSwitcher = new ImageSwitcher(activity.getApplicationContext());
+    public MenuPpalAdapter(Context context, ArrayList<String[]> values) {
+    	this.values = values;
+    	this.context = context;
+        inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        imageSwitcher = new ImageSwitcher(context);
     }
 	
 
@@ -37,13 +34,14 @@ public class MenuPpalAdapter extends BaseAdapter {
 		TextView textViewDescripcion = (TextView) rowView.findViewById(R.id.txtViewMenuPpalDescripcion);
 		ImageView icon = (ImageView) rowView.findViewById(R.id.imgListViewPpal);
 		
-		HashMap<String, String> opcion = new HashMap<String, String>();
-		opcion = data.get(position);
+		String[] data = values.get(position);
 		
 		// Setting all values in listview
-		textViewOpcion.setText(opcion.get(MainActivity.));
-		textViewDescripcion.setText(opcion.get(MainActivity.));
-        imageSwitcher.DisplayImage(opcion.get(MainActivity.), icon);       
+		textViewOpcion.setText(data[0]);
+		textViewDescripcion.setText(data[1]);
+		int id = context.getResources().getIdentifier(data[2], "drawable", context.getPackageName());
+		Drawable drawable = context.getResources().getDrawable(id);
+		icon.setImageDrawable(drawable);  
 		
 		return rowView;
 	}
