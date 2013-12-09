@@ -7,73 +7,46 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
-import android.widget.Gallery;
 import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	
+
 	SQLiteDatabase database;
-	
 
 	Intent generalIntent;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		setContentView(R.layout.activity_main);
 		crearMenu();
-
-		
-		
-		
 
 	}
 
 	private void crearMenu() {
-		String[] opcion1 = {"Crear", "Creacion de formatos", "crear_mini.png"};
-		String[] opcion2 = {"Crear", "Creacion de formatos", "crear_mini.png"};
-		String[] opcion3 = {"Crear", "Creacion de formatos", "crear_mini.png"};
-		String[] opcion4 = {"Crear", "Creacion de formatos", "crear_mini.png"};
-		String[] opcion5 = {"Crear", "Creacion de formatos", "crear_mini.png"};
+		String[] opcion1 = { "Crear", "Creacion de formatos", "crear_mini.png" };
+		String[] opcion2 = { "Crear", "Creacion de formatos", "crear_mini.png" };
+		String[] opcion3 = { "Crear", "Creacion de formatos", "crear_mini.png" };
+		String[] opcion4 = { "Crear", "Creacion de formatos", "crear_mini.png" };
+		String[] opcion5 = { "Crear", "Creacion de formatos", "crear_mini.png" };
 		ArrayList<String[]> arrayListMenu = new ArrayList<String[]>();
 		arrayListMenu.add(opcion1);
 		arrayListMenu.add(opcion2);
 		arrayListMenu.add(opcion3);
 		arrayListMenu.add(opcion4);
 		arrayListMenu.add(opcion5);
-		ListView listViewMenu =  (ListView) findViewById(R.id.listViewMenuPpal);
+		ListView listViewMenu = (ListView) findViewById(R.id.listViewMenuPpal);
 		MenuPpalAdapter adapter = new MenuPpalAdapter(this, arrayListMenu);
 		listViewMenu.setAdapter(adapter);
-		
-		
 
-	}
-
-	
-
-	
-	
-
-	
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
 	}
 
 	public void goCrear() {
@@ -89,7 +62,8 @@ public class MainActivity extends Activity {
 
 		LayoutInflater inflater = this.getLayoutInflater();
 
-		final View layout_dialogo = inflater.inflate(R.layout.dialog_layout_consultar, null);
+		final View layout_dialogo = inflater.inflate(
+				R.layout.dialog_layout_consultar, null);
 
 		builder.setView(layout_dialogo);
 
@@ -98,15 +72,19 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 
-				EditText editDialogo = (EditText) layout_dialogo.findViewById(R.id.etxtBusqueda);
+				EditText editDialogo = (EditText) layout_dialogo
+						.findViewById(R.id.etxtBusqueda);
 				String id = editDialogo.getText().toString();
 				if (esConsulta(id)) {
-					generalIntent = new Intent(getApplicationContext(), CrearActivity.class);
+					generalIntent = new Intent(getApplicationContext(),
+							CrearActivity.class);
 					generalIntent.putExtra("isModificar", true);
 					generalIntent.putExtra("id", id);
 					startActivity(generalIntent);
 				} else {
-					Toast.makeText(getApplicationContext(), "La consulta no arrojó ningún resultado", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(),
+							"La consulta no arrojó ningún resultado",
+							Toast.LENGTH_SHORT).show();
 				}
 
 			}
@@ -133,7 +111,8 @@ public class MainActivity extends Activity {
 
 		LayoutInflater inflater = this.getLayoutInflater();
 
-		final View layout_dialogo = inflater.inflate(R.layout.dialog_layout_consultar, null);
+		final View layout_dialogo = inflater.inflate(
+				R.layout.dialog_layout_consultar, null);
 
 		builder.setView(layout_dialogo);
 
@@ -142,14 +121,18 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 
-				EditText editDialogo = (EditText) layout_dialogo.findViewById(R.id.etxtBusqueda);
+				EditText editDialogo = (EditText) layout_dialogo
+						.findViewById(R.id.etxtBusqueda);
 				String id = editDialogo.getText().toString();
 				if (esConsulta(id)) {
-					generalIntent = new Intent(getApplicationContext(), ConsultarActivity.class);
+					generalIntent = new Intent(getApplicationContext(),
+							ConsultarActivity.class);
 					generalIntent.putExtra("id", id);
 					startActivity(generalIntent);
 				} else {
-					Toast.makeText(getApplicationContext(), "La consulta no arrojó ningún resultado", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(),
+							"La consulta no arrojó ningún resultado",
+							Toast.LENGTH_SHORT).show();
 				}
 
 			}
@@ -181,7 +164,8 @@ public class MainActivity extends Activity {
 
 		LayoutInflater inflater = this.getLayoutInflater();
 
-		final View layout_dialogo = inflater.inflate(R.layout.dialog_layout_consultar, null);
+		final View layout_dialogo = inflater.inflate(
+				R.layout.dialog_layout_consultar, null);
 
 		builder.setView(layout_dialogo);
 
@@ -190,14 +174,18 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 
-				EditText editDialogo = (EditText) layout_dialogo.findViewById(R.id.etxtBusqueda);
+				EditText editDialogo = (EditText) layout_dialogo
+						.findViewById(R.id.etxtBusqueda);
 				String id = editDialogo.getText().toString();
 				if (esConsulta(id)) {
-					generalIntent = new Intent(getApplicationContext(), ControlActivity.class);
+					generalIntent = new Intent(getApplicationContext(),
+							ControlActivity.class);
 					generalIntent.putExtra("id", id);
 					startActivity(generalIntent);
 				} else {
-					Toast.makeText(getApplicationContext(), "La consulta no arrojó ningún resultado", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(),
+							"La consulta no arrojó ningún resultado",
+							Toast.LENGTH_SHORT).show();
 				}
 
 			}
@@ -217,7 +205,8 @@ public class MainActivity extends Activity {
 	}
 
 	private boolean esConsulta(String id) {
-		Cursor c = database.rawQuery("select * from riesgos where id = " + id, null);
+		Cursor c = database.rawQuery("select * from riesgos where id = " + id,
+				null);
 
 		c.moveToFirst();
 		if (c.getCount() > 0) {

@@ -4,15 +4,16 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MenuPpalAdapter extends BaseAdapter {
+public class MenuPpalAdapter extends ArrayAdapter<String[]> {
 	
 	private Context context;
 	private ArrayList<String[]> values;
@@ -20,6 +21,7 @@ public class MenuPpalAdapter extends BaseAdapter {
     public ImageSwitcher imageSwitcher; 
  
     public MenuPpalAdapter(Context context, ArrayList<String[]> values) {
+    	super(context, R.layout.row_layout_adapter_menu, values);
     	this.values = values;
     	this.context = context;
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -35,6 +37,8 @@ public class MenuPpalAdapter extends BaseAdapter {
 		ImageView icon = (ImageView) rowView.findViewById(R.id.imgListViewPpal);
 		
 		String[] data = values.get(position);
+		Log.e("DATO: ", String.valueOf(data[0]));
+		
 		
 		// Setting all values in listview
 		textViewOpcion.setText(data[0]);
@@ -45,24 +49,5 @@ public class MenuPpalAdapter extends BaseAdapter {
 		
 		return rowView;
 	}
-
-	@Override
-	public int getCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public Object getItem(int arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public long getItemId(int arg0) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 
 }
