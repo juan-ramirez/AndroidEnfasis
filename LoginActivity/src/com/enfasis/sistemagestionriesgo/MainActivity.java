@@ -32,11 +32,11 @@ public class MainActivity extends Activity {
 	}
 
 	private void crearMenu() {
-		String[] opcion1 = { "Crear", "Creacion de formatos", "crear_mini.png" };
-		String[] opcion2 = { "Crear", "Creacion de formatos", "crear_mini.png" };
-		String[] opcion3 = { "Crear", "Creacion de formatos", "crear_mini.png" };
-		String[] opcion4 = { "Crear", "Creacion de formatos", "crear_mini.png" };
-		String[] opcion5 = { "Crear", "Creacion de formatos", "crear_mini.png" };
+		String[] opcion1 = { "Crear", "Creacion de formatos", "crear_mini" };
+		String[] opcion2 = { "Crear", "Creacion de formatos", "crear_mini" };
+		String[] opcion3 = { "Crear", "Creacion de formatos", "crear_mini" };
+		String[] opcion4 = { "Crear", "Creacion de formatos", "crear_mini" };
+		String[] opcion5 = { "Crear", "Creacion de formatos", "crear_mini" };
 		ArrayList<String[]> arrayListMenu = new ArrayList<String[]>();
 		arrayListMenu.add(opcion1);
 		arrayListMenu.add(opcion2);
