@@ -111,6 +111,6 @@
         android:layout_margin="10dp"
         android:contentDescription="@string/content_desciption"
         android:onClick="controlarRiesgo"
-        android:src="@drawable/control_mini" />
+        android:src="@drawable/control" />
 
 </RelativeLayout>

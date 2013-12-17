@@ -62,7 +62,7 @@ public class CrearActivity extends Activity {
 		mostrarNumeroRiesgo();
 		asignarAdapterSpinners();
 		if (isModificar) {
-			imgbtnCrear.setImageResource(R.drawable.modificar_mini);
+			imgbtnCrear.setImageResource(R.drawable.modificar);
 			cargarDatosPrevios();
 		}
 

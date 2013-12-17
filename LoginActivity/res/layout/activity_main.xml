@@ -4,11 +4,7 @@
     android:background="#333"
     android:orientation="vertical" >
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="171dp"
-        android:layout_height="114dp"
-        android:src="@drawable/consultar" />
+    
 
     <ListView
         android:id="@+id/listViewMenuPpal"
